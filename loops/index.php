@@ -12,31 +12,35 @@
     }
     echo $num . "<br>";
     ////////////////////////////////////
-
-    function diamond($char) {
-        $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        $pos = strpos($chars, $char);
-        
-        if ($pos === false) {
-            echo "Invalid character!";
-            return;
+    $arr = ['A', 'B', 'C', 'D', 'E'];
+    ///////////////////////////////////////
+    for($i = 1; $i <=5; $i++){
+        for ($j = 1; $j <=5; $j++){
+            echo $i . " ";
         }
-        
-        $totalLines = 2 * $pos + 1;
-        
-        for ($i = 0; $i < $totalLines; $i++) {
-            // For the first half (including the middle line)
-            if ($i <= $pos) {
-                $len = $i + 1;
-            } 
-            // For the lower half
-            else {
-                $len = $totalLines - $i;
-            }
-            // Print the first $len letters of the alphabet string
-            echo substr($chars, 0, $len) . "<br>";
-        }
+        echo "<br>";
     }
-
-diamond("C");
+    //////////////////////////////////////////
+    for($i = 1; $i <= 5; $i ++){
+        for ($j =1; $j <= 5; $j ++){
+            echo ($j == $i) ? $i . " " : 0 . " ";
+        }
+        echo "<br>";
+    }
+    /////////////////////////////// factorial
+    $number = 6;
+    $fact = 1;
+    for ($i = $number; $i > 0; $i--){
+        $fact *= $i;
+    }
+    echo $fact . "<br>";
+    //////////////////////////////// Fibonacci
+    $arr = [0,1];
+    for ($i = 1; $i < 10; $i ++){
+        $arr[] = $arr[$i] + $arr[$i - 1];
+    }
+    print_r($arr);
+    ///////////////////////////////////
 ?>
+
+
